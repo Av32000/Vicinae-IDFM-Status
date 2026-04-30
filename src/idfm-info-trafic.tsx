@@ -169,7 +169,7 @@ const LineInfoView = ({ line }: { line: Line }) => {
   );
 };
 
-function lineSctionContent(
+function lineSectionContent(
   transportmode: string,
   favoriteLines: string[],
   onToggleFavorite: (line: Line) => Promise<void>,
@@ -285,8 +285,9 @@ export default function IDFMInfoTrafic() {
 
   return (
     <List>
-      {["favorites", "rail", "metro", "bus", "tramway"].map((transportmode) =>
-        lineSctionContent(transportmode, favoriteLines, toggleFavorite),
+      {["favorites", "rail", "metro", "bus", "tram", "cableway"].map(
+        (transportmode) =>
+          lineSectionContent(transportmode, favoriteLines, toggleFavorite),
       )}
     </List>
   );
